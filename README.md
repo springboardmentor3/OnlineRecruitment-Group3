@@ -24,7 +24,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## For backend Part
 
-Run 'backend folder' separate on Eclipse or VS code IDE and also connect Mysql database 
+Run `backend folder` separate on Eclipse or VS code IDE and also connect Mysql database 
 
 ## Further help
 
