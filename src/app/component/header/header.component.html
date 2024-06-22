@@ -1,0 +1,27 @@
+<header>
+  <nav>
+    <ul>
+      <img src="../../../assets/download.png" width="25px" height="25px" style=" border-radius: 50%;
+    object-fit: cover;margin-bottom: 4px;
+    
+    margin: auto;" alt="">
+    <div class="hidden" style="width:4px;display:none"></div>
+      <li><a routerLink="welcome" style="margin-bottom: 3px;">Online Recruitment</a></li>
+    </ul>
+    <ul *ngIf="!authService.isLoggedIn()" class="auth-links">
+         <li><a routerLink="first">Signup</a></li>
+      <li><a routerLink="login">Login</a></li>
+      
+     
+    </ul>
+    <ul *ngIf="authService.isLoggedIn()" class="auth-links">
+          <li><a  routerLink="contact">Contact Us</a></li>
+     
+      <li><a  routerLink="job4u">Job for You</a></li>
+       <li><a (click)="logout()">Logout</a></li>
+   
+      
+     
+    </ul>
+  </nav>
+</header>

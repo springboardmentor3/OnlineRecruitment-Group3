@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../../../assets/bg3.avif);
+   
+    
+    
+       /* width:100vh; */
+       height: 100vh;
+        background-size: cover; 
+        background-attachment: fixed; 
+}
+/*h1{
+    text-align: center;
+    color: #ccc;
+}
+
+.job-list {
+    width: 80%;
+    margin: 20px auto;
+}
+.job-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.job-item img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+.job-details {
+    color: #ccc;
+    flex: 1;
+}
+.job-item h2 {
+    margin-top: 0;
+    color: #ccc;
+}*/
+.apply-btn,.see-more-btn {
+    background-color:#004080; ;
+    color: black;
+    font-size: medium;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 70px;
+    height: 40px;
+}
+.content{
+        position: relative;
+    gap: 19px;
+}
+.apply-btn:hover,
+.see-more-btn:hover {
+    background-color: rgb(247, 243, 244);
+}
+.see-more-container {
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+} 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+h1{
+    color:white
+}
+
+.card {
+  
+ 
+    width: 270px;
+    padding: 30px;
+    height: 158px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    padding: 5px;
+    flex: 1;
+  }
+  
+  .search-bar button {
+    padding: 5px 10px;
+    background-color: #004080;;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }

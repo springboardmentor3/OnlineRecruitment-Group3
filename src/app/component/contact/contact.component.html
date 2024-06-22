@@ -1,0 +1,155 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container-fluid px-0" id="bg-div">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 col-12">
+        <div class="card card0" style="top:140px;border-radius: 20px; width:200px; height:100px">
+          <div class="d-flex" >
+            <!-- Sidebar -->
+            <div class="bg-light border-right" id="sidebar-wrapper" style="height: fit-content;">
+              
+              <div class="list-group list-group-flush">
+                 <a
+                  data-toggle="tab"
+                  routerLink="/contact"
+                  id="tab1"
+                  class="tabs list-group-item bg-light"
+                   routerLinkActive="active-tab"
+                >
+                  <div class="list-div my-2">
+                    <div class="fa-solid fa-message"></div>
+                    &nbsp;&nbsp; Type message
+                  </div>
+                </a>
+                <a
+                  data-toggle="tab"
+                  routerLink="/inbox"
+                  id="tab1"
+                  class="tabs list-group-item bg-light"
+                >
+                  <div class="list-div my-2">
+                    <i class="fa-regular fa-comment"></i>
+                    &nbsp;&nbsp; Inbox
+                  </div>
+                </a>
+                <a
+                  data-toggle="tab"
+                  routerLink="/outbox"
+                  id="tab2"
+                  class="tabs list-group-item active1"
+                >
+                  <div class="list-div my-2">
+                    <i class="fa-regular fa-envelope"></i>
+                    &nbsp;&nbsp; sent
+                  </div>
+                </a>
+              </div>
+            </div>
+            
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-12">
+        <div class="input-group" style="width: 600px;">
+          <label for="email">To:</label>
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Enter emailId..."
+            id="email"
+            class="form-control"
+            
+          />
+        </div>
+        <div
+          *ngIf="
+            form.controls['email'].invalid &&
+            (form.controls['email'].dirty || form.controls['email'].touched)
+          "
+        >
+          <div
+            class="text-danger"
+            *ngIf="form.controls['email'].errors['required']"
+          >
+            Email is required.
+          </div>
+          <div
+            class="text-danger"
+            *ngIf="form.controls['email'].errors['email']"
+          >
+            Invalid email format.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="input-group">
+          <label for="message">Message</label>
+          <input
+            type="text"
+            formControlName="message"
+            placeholder="Enter Your messages"
+            id="message"
+            class="form-control"
+          />
+        </div>
+        <div
+          *ngIf="
+            form.controls['message'].errors &&
+            (form.controls['message'].dirty || form.controls['message'].touched)
+          "
+        >
+          <div
+            class="text-danger"
+            *ngIf="form.controls['message'].errors['required']"
+          >
+            Message is required.
+          </div>
+          <div
+            class="text-danger"
+            *ngIf="
+              form.controls['message'].errors['minlength'] ||
+              form.controls['message'].errors['maxlength']
+            "
+          >
+            Message must be between 10 and 200 characters.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button
+          type="submit"
+          [disabled]="form.invalid"
+          class="btn btn-success placeicon"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

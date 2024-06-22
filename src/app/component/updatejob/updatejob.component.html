@@ -1,0 +1,118 @@
+<body class="job-post-section">
+    <div class="container">
+        <div class="apply_box">
+            <h1>Update Job</h1>&nbsp;
+            <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+                <div class="form_container">
+                    <div class="form-group">
+                        <label for="jobId"  class="required">Job ID</label>
+                        <input [class.is-invalid]="jobId?.invalid &&
+                        jobId?.touched" type="text"  class="form-control" id="company" placeholder="Enter Job Id" formControlName="jobId">
+                        <div *ngIf="jobId?.invalid && jobId?.touched">
+                            <small *ngIf="jobId?.errors?.['required']" class="text-danger">JobId is required</small>
+                            
+                          </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="company"  class="required">Company</label>
+                        <input [class.is-invalid]="company?.invalid &&
+                        company?.touched" type="text"  class="form-control" id="company" placeholder="Enter company name" formControlName="company">
+                        <div *ngIf="company?.invalid && company?.touched">
+                            <small *ngIf="company?.errors?.['required']" class="text-danger">Company name is required</small>
+                            
+                          </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobName"  class="required">Job Name </label>
+                        <input [class.is-invalid]="jobName?.invalid &&
+                        jobName?.touched" class="form-control" id="jobName" type="text" placeholder="Enter Job Name" formControlName="jobName">
+                        <div *ngIf="jobName?.invalid && jobName?.touched">
+                            <small *ngIf="jobName?.errors?.['required']" class="text-danger">job Name is required</small>
+                            <small *ngIf="jobName?.errors?.['minlength']" class="text-danger">job Name must be {{ jobName.errors?.["minlength"].requiredLength }} characters</small>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="salary"  class="required">Salary </label>
+                        <input [class.is-invalid]="salary?.invalid &&
+                        salary?.touched" class="form-control" class="form-control" id="salary" type="text" placeholder="Enter the Salary" formControlName="salary">
+                        <div *ngIf="salary?.invalid && salary?.touched">
+                            <small *ngIf="salary?.errors?.['required']" class="text-danger">salary is required</small>
+                            <small *ngIf="salary?.errors?.['minlength']" class="text-danger">salary must be {{ salary.errors?.["minlength"].requiredLength }} characters</small>
+                          </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="location"  class="required">Job location </label>
+                        <input [class.is-invalid]="location?.invalid &&
+                        location?.touched" class="form-control" id="location" type="text" placeholder="Enter Job Location" formControlName="location">
+                        <div *ngIf="location?.invalid && location?.touched">
+                            <small *ngIf="location?.errors?.['required']" class="text-danger">job location is required</small>
+                          </div>
+                    </div>
+ <div class="form-group">
+    <label for="jobType" class="required">Job Type</label>
+    <div class="select-style">
+        <select formControlName="jobTypeControl" class="form-control" id="jobType" name="jobType" required>
+            <option value="" disabled selected>Select Job Type</option>
+            <option *ngFor="let type of jobTypes" [value]="type">{{ type }}</option>
+        </select>
+        <div *ngIf="jobTypeControl.invalid && (jobTypeControl.dirty || jobTypeControl.touched)" class="text-danger">
+            <div *ngIf="jobTypeControl.errors?.['required']">
+                Please select a job type.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                    <div class="form-group">
+                        <label for="jobDescription"  class="required">Job Description </label>
+                        <textarea [class.is-invalid]="jobDescription?.invalid &&
+                        jobDescription?.touched" class="form-control" class="form-control" id="jobDescription"
+                            placeholder="Enter Job Description" formControlName="jobDescription"></textarea>
+                            <div *ngIf="jobDescription?.invalid && jobDescription?.touched">
+                                <small *ngIf="jobDescription?.errors?.['required']" class="text-danger">jobDescription is required</small>
+                                <small *ngIf="jobDescription?.errors?.['minlength']" class="text-danger">jobDescription must be {{ jobDescription.errors?.["minlength"].requiredLength }} characters</small>
+                              </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vacancy"  class="required">Vacancy </label>
+                        <input [class.is-invalid]="vacancy?.invalid &&
+                        vacancy?.touched" type="number" type="text" class="form-control" id="vacancy" placeholder="Enter Vacancy" formControlName="vacancy">
+                        <div *ngIf="vacancy?.invalid && vacancy?.touched">
+                            <small *ngIf="vacancy?.errors?.['required']" class="text-danger">vacancy is required</small>
+                            <small *ngIf="vacancy?.errors?.['minlength']" class="text-danger">vacancy must be {{ vacancy.errors?.["minlength"].requiredLength }} digits.</small>
+                          </div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="fileUpload">Upload Job Description(optional)</label>
+                        <input type="file" class="form-control-file" id="fileUpload">
+                    </div> -->
+                    <button type="submit" class="btn btn-primary btn-full-width">Update Job</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="sponsor_box">
+        <h2>Sponsors</h2>
+        <p>HCl Technology <br> Over 6,000+ Premium Jobs</p>
+        <hr>
+        <p>TCS <br> Premium Jobs</p>
+        <hr>
+        <p>Infosys <br> Premium Jobs</p>
+        <hr />
+        <p>Amazon <br> Premium Jobs</p>
+        <hr>
+        <p>Accenture <br> Premium Jobs</p>
+        <hr>
+        <p>Flipcart <br> Premium Jobs</p>
+        <hr>
+        <h3>Wise Words</h3>
+        <p><i>"If one advances confidently in the direction of his dreams, and endeavors to live the life which he has
+                imagined,
+                he will meet with a success unexpected in common hours."</i><br> - Henry David Thoreau, writer</p>
+    </div>
+
+</body>
+

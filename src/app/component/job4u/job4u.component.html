@@ -1,0 +1,37 @@
+<head>   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div style="text-align: center; display: ruby-text
+"><h1 >Jobs for You </h1><div style="margin-left: 30px;">
+
+<i  class="fa-sharp fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"><a routerLink="/search" style="text-decoration: none;color: white; ">  Search jobs</a></i></div></div>
+     
+   
+<div class="card-container">
+  <div class="card" *ngFor="let job of jobs">
+    <div name="content">
+      <header>
+
+
+        <h2>{{job.company}}</h2>
+        <h3>{{ job.jobName }}</h3>
+      </header>
+      <content>
+        <p>Salary: {{ job.salary }}</p>
+        <p>Description: {{ job.description}}</p>
+        <p>Vacancy: {{ job.vacancy }}</p>
+        <p>Location: {{ job.location }}</p>
+        <p>Type: {{ job.jobTypeControl }}</p>
+      </content>
+      <div name="btn">
+          <button class="apply-btn" (click)="applyJob(job.jobId)" color="primary">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+   
+    
+    
+    </body>
